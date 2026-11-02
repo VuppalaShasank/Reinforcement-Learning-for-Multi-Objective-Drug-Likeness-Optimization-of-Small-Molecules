@@ -1,0 +1,27 @@
+{
+  "dataset_name": "ZINC-250K",
+  "total_source_molecules": 249455,
+  "experimental_subset_size": 5000,
+  "split_ratio": "80:10:10 (Train:Val:Test)",
+  "train_molecules_count": 4000,
+  "val_molecules_count": 500,
+  "test_molecules_count": 500,
+  "pilot_test_molecules_count": 60,
+  "unique_scaffolds_train": 3251,
+  "unique_scaffolds_val": 441,
+  "unique_scaffolds_test": 500,
+  "cross_split_scaffold_overlap": {
+    "train_val": 0,
+    "train_test": 0,
+    "val_test": 0
+  },
+  "qed_group_counts": {
+    "Low (<0.50)": 125,
+    "Medium (0.50-0.70)": 125,
+    "High (0.70-0.85)": 125,
+    "Very High (>=0.85)": 125
+  },
+  "selection_random_seed": 42,
+  "scaffold_method": "Bemis-Murcko Scaffold",
+  "verification_status": "VERIFIED_ZERO_LEAKAGE"
+}

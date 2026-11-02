@@ -1,0 +1,78 @@
+# ==============================================================================
+# Reinforcement Learning for Drug-Likeness Optimization of Small Molecules
+# Experiment and Algorithm Configuration
+# ==============================================================================
+
+project:
+  title: "Reinforcement Learning for Drug-Likeness Optimization of Small Molecules"
+  course: "22AIE401 - Reinforcement Learning"
+  primary_dataset: "ZINC-250K"
+  algorithm: "PPO (Proximal Policy Optimization)"
+  representation: "Molecular Graph + Scalar Descriptors"
+  architecture: "3-Layer GNN + Actor-Critic Policy"
+
+environment:
+  max_steps: 10
+  allowed_elements: ["C", "N", "O", "F", "S", "Cl"]
+  max_atoms: 38
+  total_actions: 1901
+  success_criteria:
+    min_delta_qed: 0.10
+    min_similarity: 0.40
+    max_sas_base: 4.50
+    require_valid: true
+
+gnn_encoder:
+  node_dim: 21
+  edge_dim: 4
+  gnn_hidden: 64
+  scalar_dim: 6
+  fused_dim: 128
+  num_layers: 3
+  pooling: ["mean", "max"]
+
+ppo:
+  learning_rate: 0.0003
+  gamma: 0.99
+  gae_lambda: 0.95
+  clip_coef: 0.20
+  ent_coef: 0.01
+  vf_coef: 0.50
+  max_grad_norm: 0.50
+  ppo_epochs: 4
+  batch_size: 32
+
+training:
+  num_episodes: 60
+  update_every_episodes: 5
+  eval_every_episodes: 15
+  seeds: [42, 123, 999]
+  checkpoint_dir: "rl_lead_optimization/checkpoints"
+  log_dir: "rl_lead_optimization/logs"
+  figures_dir: "rl_lead_optimization/figures"
+  results_dir: "rl_lead_optimization/results"
+
+reward:
+  mode: "adaptive" # Options: "adaptive", "baseline"
+  step_cost: 0.01
+  sim_threshold: 0.40
+  max_sas_base: 4.50
+  headroom_eps: 0.05
+  barrier_k_sim: 10.0
+  barrier_k_sas: 2.0
+  terminal_bonus: 10.0
+  invalid_penalty: -1.0
+
+evaluation:
+  benchmark_sample_size: 500
+  pilot_sample_size: 60
+  qed_groups:
+    low: [0.0, 0.50]
+    med: [0.50, 0.70]
+    high: [0.70, 0.85]
+    very_high: [0.85, 1.0]
+  baselines:
+    - "Random Valid Edits"
+    - "Greedy Hill Climbing"
+    - "PPO Baseline"
+    - "PPO Adaptive (Proposed)"

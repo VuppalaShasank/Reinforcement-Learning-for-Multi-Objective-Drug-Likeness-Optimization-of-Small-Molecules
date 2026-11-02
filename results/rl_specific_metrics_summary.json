@@ -1,0 +1,41 @@
+{
+  "evaluation_cohort_size": 500,
+  "total_trajectories": 2000,
+  "mean_episodic_return": {
+    "ppo_adaptive": -2.0700061684864055,
+    "ppo_baseline": -1.569738173641183,
+    "definition": "Empirical expected cumulative return on 500 unseen molecules"
+  },
+  "formal_success_rate": {
+    "ppo_adaptive": 0.05,
+    "ppo_baseline": 0.054,
+    "greedy_oracle": 0.654,
+    "criterion": "Delta-QED >= 0.1 AND Sim >= 0.40 AND SAS <= max(SAS0, 4.5)"
+  },
+  "high_qed_success_rate": {
+    "ppo_adaptive": 0.096,
+    "ppo_baseline": 0.02,
+    "greedy_oracle": 0.61,
+    "criterion": "QED_final >= 0.80 AND Sim >= 0.40 AND Valid"
+  },
+  "reference_relative_regret_vs_greedy": {
+    "ppo_adaptive_regret": 0.2958984515196553,
+    "ppo_baseline_regret": 0.5011370349374348,
+    "definition": "E[Delta-QED_greedy - Delta-QED_policy] on identical 500 test molecules"
+  },
+  "generalization_gap": {
+    "ppo_adaptive_gap": 0.024,
+    "ppo_baseline_gap": 0.058,
+    "definition": "|J_train - J_test| across scaffold-disjoint splits"
+  },
+  "computational_efficiency": {
+    "ppo_adaptive_sec_per_mol": 0.7863154458999634,
+    "greedy_oracle_sec_per_mol": 0.5431078195571899,
+    "speedup_factor": 0.6906996707098707
+  },
+  "constraint_violation_rate": {
+    "ppo_adaptive": 0.406,
+    "ppo_baseline": 0.914,
+    "definition": "Fraction of trajectories violating Tanimoto >= 0.40 constraint"
+  }
+}

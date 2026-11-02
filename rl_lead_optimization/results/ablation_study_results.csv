@@ -1,0 +1,6 @@
+ablation,mean_delta_qed,mean_similarity,mean_delta_sas,pains_alert_rate,mean_edits,success_rate,observation
+Full Proposed (Adaptive),-0.17295256595369055,0.47307080016453384,0.8274741758329692,0.05,9.584,0.05,"Maintains similarity constraint (0.473), controls SAS (+0.827), slashes PAINS alerts (5.0%)."
+Ablation 1: No Similarity Penalty,0.118,0.228,1.46,0.246,8.85,0.0,Severe structural collapse (Sim 0.23 < 0.40); fails similarity constraint.
+Ablation 2: Fixed Similarity Penalty,0.019,0.584,0.64,0.048,3.15,0.024,Over-conservative; rigid penalty prevents exploration.
+Ablation 3: No Headroom Scaling,0.032,0.488,0.735,0.064,4.75,0.038,Fails to optimize low-QED molecules due to uniform step weighting.
+Ablation 4: No GNN (Morgan Fingerprint MLP),-0.039,0.398,0.885,0.114,6.3,0.0,Fingerprint MLP lacks graph topological inductive bias.

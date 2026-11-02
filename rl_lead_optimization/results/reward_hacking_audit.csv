@@ -1,0 +1,5 @@
+method,count,pains_alert_rate,brenk_alert_rate,mean_lipinski_violations,sanity_pass_rate,validity_rate
+Random Valid Edits,500,0.17,0.966,0.704,1.0,1.0
+PPO Baseline (Unshaped),500,0.148,0.944,0.704,0.998,1.0
+PPO Proposed (Adaptive),500,0.05,0.73,0.288,1.0,1.0
+Greedy Hill Climbing,500,0.094,0.286,0.016,1.0,1.0
