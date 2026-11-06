@@ -127,8 +127,8 @@ Evaluated on **100 held-out, scaffold-separated test molecules** (25 per QED tie
 ### Installation
 
 ```bash
-git clone https://github.com/your-username/RL_Sem7_Proj.git
-cd RL_Sem7_Proj
+git clone https://github.com/VuppalaShasank/Reinforcement-Learning-for-Multi-Objective-Drug-Likeness-Optimization-of-Small-Molecules.git
+cd Reinforcement-Learning-for-Multi-Objective-Drug-Likeness-Optimization-of-Small-Molecules
 pip install -r requirements.txt
 ```
 
