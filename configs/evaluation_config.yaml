@@ -1,0 +1,78 @@
+# ==============================================================================
+# Reinforcement Learning for Drug-Likeness Optimization of Small Molecules
+# Benchmark Evaluation Configuration
+# ==============================================================================
+
+evaluation_benchmarks:
+  pilot_60:
+    cohort_size: 60
+    dataset_path: "data/archives/pilot_60/test_benchmark_molecules.csv"
+    results_dir: "results/pilot_60"
+    methods:
+      - "Random Valid Edits"
+      - "Greedy Hill Climbing"
+      - "PPO Baseline"
+      - "PPO Proposed (Adaptive V1)"
+    max_steps: 10
+    stratified_groups:
+      low: 15
+      medium: 15
+      high: 15
+      very_high: 15
+
+  benchmark_500:
+    cohort_size: 500
+    dataset_path: "data/splits/test_benchmark_molecules.csv"
+    results_dir: "results/benchmark_500"
+    methods:
+      - "Random Valid Edits"
+      - "Greedy Hill Climbing"
+      - "PPO Baseline"
+      - "PPO Proposed (Adaptive V1)"
+    max_steps: 10
+    stratified_groups:
+      low: 125
+      medium: 125
+      high: 125
+      very_high: 125
+
+  improvement_100:
+    cohort_size: 100
+    dataset_path: "data/splits/val_molecules.csv"
+    results_dir: "results/improvement_100"
+    methods:
+      - "Random Valid Edits"
+      - "PPO Baseline (V1 Unshaped)"
+      - "PPO Adaptive (V1 Original)"
+      - "PPO Adaptive (V2 Edge-Aware Pure)"
+      - "PPO-Guided Search (Hybrid Top-5)"
+      - "Greedy Hill Climbing (Oracle)"
+    max_steps: 10
+    top_k_candidates: 5
+    stratified_groups:
+      low: 25
+      medium: 25
+      high: 25
+      very_high: 25
+
+metrics:
+  rl_specific:
+    - "mean_episodic_return"
+    - "value_loss"
+    - "policy_entropy"
+    - "stop_frequency"
+    - "horizon_termination_rate"
+  molecular_optimization:
+    - "delta_qed"
+    - "formal_success_rate"
+    - "high_qed_success_rate"
+    - "tanimoto_similarity"
+    - "constraint_violations"
+    - "delta_sas"
+    - "lipinski_violations"
+    - "pains_alert_rate"
+    - "chemical_validity"
+  computational_efficiency:
+    - "property_evaluations_per_mol"
+    - "wall_clock_seconds_per_mol"
+

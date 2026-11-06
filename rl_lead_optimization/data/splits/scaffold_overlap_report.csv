@@ -1,4 +1,0 @@
-comparison,scaffold_overlap_count,smiles_overlap_count,status
-Train vs Validation,0,0,PASSED (Zero Leakage)
-Train vs Final Test,0,0,PASSED (Zero Leakage)
-Validation vs Final Test,0,0,PASSED (Zero Leakage)

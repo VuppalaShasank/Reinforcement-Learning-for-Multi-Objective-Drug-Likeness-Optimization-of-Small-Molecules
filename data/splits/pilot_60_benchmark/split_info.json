@@ -1,9 +1,0 @@
-{
-  "total_valid": 5000,
-  "train_count": 4000,
-  "val_count": 501,
-  "test_count": 499,
-  "unique_scaffolds": 4132,
-  "train_scaffolds": 3252,
-  "test_scaffolds": 439
-}

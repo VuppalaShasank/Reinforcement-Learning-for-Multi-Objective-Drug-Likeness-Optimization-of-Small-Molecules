@@ -47,10 +47,10 @@ training:
   update_every_episodes: 5
   eval_every_episodes: 15
   seeds: [42, 123, 999]
-  checkpoint_dir: "rl_lead_optimization/checkpoints"
-  log_dir: "rl_lead_optimization/logs"
-  figures_dir: "rl_lead_optimization/figures"
-  results_dir: "rl_lead_optimization/results"
+  checkpoint_dir: "checkpoints"
+  log_dir: "results/logs"
+  figures_dir: "code_output_figures"
+  results_dir: "results"
 
 reward:
   mode: "adaptive" # Options: "adaptive", "baseline"

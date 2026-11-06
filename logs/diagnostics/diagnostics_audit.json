@@ -1,0 +1,26 @@
+{
+  "1_mean_evaluation_return": -1.9555369072258488,
+  "2_mean_evaluation_delta_qed": -0.21171462454521892,
+  "3_evaluation_success_rate": 0.05,
+  "4_mean_final_similarity": 0.45973636155861414,
+  "5_mean_sas_change": 0.7945745251010592,
+  "6_mean_number_of_edits": 9.65,
+  "7_stop_action_frequency_pct": 0.0,
+  "8_episodes_terminated_by_stop_pct": 0.0,
+  "9_episodes_terminated_by_horizon_pct": 95.0,
+  "10_actions_producing_qed_improvement_pct": 34.196891191709845,
+  "11_actions_reducing_qed_pct": 62.17616580310881,
+  "12_actions_neutral_qed_pct": 3.6269430051813467,
+  "13_avg_valid_candidate_actions_per_state": 153.4887737478411,
+  "14_action_type_distribution": {
+    "STOP": 0,
+    "ADD": 231,
+    "REMOVE": 2,
+    "SUBSTITUTE": 334,
+    "CHANGE_BOND": 12
+  },
+  "15_edge_aware_gnn_active": false,
+  "16_constraint_violation_rate": 0.45,
+  "17_stop_index_actual": 0,
+  "18_total_discrete_actions": 1901
+}

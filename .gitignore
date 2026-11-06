@@ -3,9 +3,26 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Pytest & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Environments & IDEs
+.venv/
+venv/
+ENV/
+env/
+.vscode/
+.idea/
 
 # System / OS
 .DS_Store
 Thumbs.db
+
+# Logs & Temporary files
+*.log

@@ -1,0 +1,12 @@
+Diagnostic Metric,Observed Value,Benchmark Target / Root Cause
+Mean Evaluation Return,-1.956,Negative returns indicate penalty accumulation
+Mean Evaluation Delta-QED,-0.2117,Greedy achieves +0.1229; PPO degrades molecules
+Success Rate,5.0%,Greedy achieves 65.4%; PPO fails multi-objective
+Mean Final Similarity,0.460,Target >= 0.40; drifting near boundary
+Mean Number of Edits,9.65 / 10,Greedy stops at 1.42 edits; PPO over-edits to horizon
+Episodes Terminated by STOP,0.0%,Agent rarely chooses STOP; runs until truncated
+Episodes Terminated by Horizon,95.0%,90%+ episodes hit maximum step limit
+Actions Reducing QED,62.2%,Majority of exploratory edits degrade QED
+Actions Improving QED,34.2%,Only small fraction of steps improve properties
+Valid Candidates / State,153.5,"Out of 1901 actions, ~60-120 are valid candidates"
+GNN Edge Attributes in Conv,NO (GraphConv ignores edge_attr),GNN is blind to single/double/triple/aromatic bonds

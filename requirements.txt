@@ -1,0 +1,28 @@
+# ==============================================================================
+# Reinforcement Learning for Drug-Likeness Optimization of Small Molecules
+# Python Dependencies (Pinned Working Versions)
+# ==============================================================================
+
+# Core Chemistry & RDKit
+rdkit>=2024.03.1
+
+# Deep Learning & Graph Neural Networks
+torch>=2.0.0
+torch_geometric>=2.5.0
+
+# Numerical Computing & Data Processing
+numpy>=1.23.5,<2.0.0
+pandas>=2.0.0
+scipy>=1.10.0
+
+# Visualization & Notebooks
+matplotlib>=3.7.0
+nbformat>=5.9.0
+ipykernel>=6.20.0
+
+# Configuration & RL Environment
+pyyaml>=6.0.0
+gymnasium>=0.28.0
+
+# Testing & Quality Assurance
+pytest>=7.0.0

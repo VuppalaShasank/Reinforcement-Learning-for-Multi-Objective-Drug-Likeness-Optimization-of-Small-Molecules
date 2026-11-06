@@ -1,0 +1,50 @@
+[
+  {
+    "checkpoint_name": "ppo_baseline.pt",
+    "active_path": "checkpoints/baseline/ppo_baseline.pt",
+    "archive_path": "archive/original_project/checkpoints/ppo_baseline.pt",
+    "model_architecture": "MolecularActorCritic (3-layer GNN, no edge_attr)",
+    "reward_function": "Standard potential-based delta-QED reward",
+    "training_dataset": "4,000 ZINC molecules (train_molecules.csv)",
+    "random_seed": 42,
+    "environment_steps": 1000,
+    "sha256": "b3079394a68efcd9aa87ea26d4a1b91c234595439ac618de7e90ba67fa32fed0",
+    "status": "Verified Active"
+  },
+  {
+    "checkpoint_name": "ppo_adaptive.pt",
+    "active_path": "checkpoints/adaptive_v1/ppo_adaptive.pt",
+    "archive_path": "archive/original_project/checkpoints/ppo_adaptive.pt",
+    "model_architecture": "MolecularActorCritic (3-layer GNN, no edge_attr)",
+    "reward_function": "Adaptive reward shaping (headroom & constraint slack)",
+    "training_dataset": "4,000 ZINC molecules (train_molecules.csv)",
+    "random_seed": 42,
+    "environment_steps": 1000,
+    "sha256": "4b81d190388c64ab9edfd8b913ffb1a580642a2a7b31da640dd2dd054fbc6baf",
+    "status": "Verified Active"
+  },
+  {
+    "checkpoint_name": "ppo_adaptive_v2_improved.pt",
+    "active_path": "checkpoints/adaptive_v2/ppo_adaptive_v2_improved.pt",
+    "archive_path": "archive/original_project/ppo_improvement/checkpoints/ppo_adaptive_v2_improved.pt",
+    "model_architecture": "EdgeAwareMolecularActorCritic (3-layer GNN with 4D edge_attr)",
+    "reward_function": "Calibrated adaptive reward with STOP preservation bonus (+2.0 * Delta-QED)",
+    "training_dataset": "4,000 ZINC molecules (curriculum across 4 QED tiers)",
+    "random_seed": 42,
+    "environment_steps": 100,
+    "sha256": "cfc3bbf107b7460bb97c7e1b346d7ad73330fc4a26f4760e72f8de498accd831",
+    "status": "Verified Active"
+  },
+  {
+    "checkpoint_name": "ppo_guided_hybrid.pt",
+    "active_path": "checkpoints/hybrid/ppo_guided_hybrid.pt",
+    "archive_path": "archive/original_project/ppo_improvement/checkpoints/ppo_adaptive_v2_improved.pt",
+    "model_architecture": "EdgeAwareMolecularActorCritic + Top-5 Lookahead Search Optimizer",
+    "reward_function": "Calibrated adaptive reward with voluntary early termination",
+    "training_dataset": "4,000 ZINC molecules (curriculum across 4 QED tiers)",
+    "random_seed": 42,
+    "environment_steps": 100,
+    "sha256": "cfc3bbf107b7460bb97c7e1b346d7ad73330fc4a26f4760e72f8de498accd831",
+    "status": "Verified Active"
+  }
+]
