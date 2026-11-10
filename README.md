@@ -17,6 +17,10 @@
 
 This project formulates **lead optimization** — a core step in computational drug discovery — as a **Markov Decision Process (MDP)** over molecular graphs. An RL agent learns to apply discrete chemical edits (add atom, remove atom, substitute element, change bond) to improve a molecule's **drug-likeness (QED)** while preserving its structural identity, synthetic feasibility, and pharmacological safety.
 
+### Molecular Optimization Pipeline
+
+![Molecular Optimization Pipeline](code_output_figures/system_design_pipeline.png)
+
 ### Five Key Contributions
 
 | # | Contribution | Where in Code |
