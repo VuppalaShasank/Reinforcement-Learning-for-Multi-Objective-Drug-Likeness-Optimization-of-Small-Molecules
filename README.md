@@ -31,6 +31,10 @@ This project formulates **lead optimization** — a core step in computational d
 | 4 | **PPO Actor-Critic Training** — Clipped surrogate objective with GAE rollouts and entropy regularisation | [`src/agents/ppo_agent_v2.py`](src/agents/ppo_agent_v2.py) |
 | 5 | **PPO-Guided Hybrid Top-5 Search** — Policy ranks candidates, 1-step lookahead selects best; 47× fewer evaluations than greedy | [`src/search/ppo_guided_search.py`](src/search/ppo_guided_search.py) |
 
+### Representative Molecular Edits
+
+![Representative Molecular Edits](code_output_figures/04_representative_molecular_edits.png)
+
 ---
 
 ## Results
@@ -47,6 +51,14 @@ Evaluated on **100 held-out, scaffold-separated test molecules** (25 per QED tie
 | Greedy Hill Climbing (Oracle) | +0.108 | 67% | 0.626 | 0% | 268.22 | 0.68s |
 
 **Key takeaway:** PPO-Guided Search achieves **47× fewer property evaluations** than Greedy Hill Climbing while preserving **0.879 structural similarity** (vs 0.626 for Greedy) and the **lowest PAINS toxicophore rate** (5.0%).
+
+### Benchmark Performance Comparison
+
+![Benchmark 500 Method Comparison](code_output_figures/01_benchmark_500_method_comparison.png)
+
+### Quality vs. Sample Efficiency Trade-off
+
+![PPO vs Greedy Trade-off](code_output_figures/06_ppo_vs_greedy_tradeoff.png)
 
 ---
 
@@ -156,6 +168,8 @@ Verifies metrics across the Pilot (60-molecule), Benchmark (500-molecule), and I
 python scripts/run_training.py --episodes 100 --curriculum
 ```
 
+![PPO Training Curves](code_output_figures/05_training_curves_improved.png)
+
 ### Running Baselines
 
 ```bash
@@ -200,6 +214,10 @@ Where:
 - **P_sim** — smooth quadratic penalty in [0.40, 0.55], steep linear barrier below 0.40
 - **P_SAS** — analogous barrier keeping SAS ≤ max(SAS₀, 4.5)
 - **STOP bonus** — +5.0 if ΔQED ≥ 0.10 and constraints met; +2.0 × ΔQED preservation bonus otherwise
+
+### Chemical Safety & Toxicophore Audit
+
+![Reward Hacking & Safety Audit](code_output_figures/10_reward_hacking_audit_chart.png)
 
 ---
 
